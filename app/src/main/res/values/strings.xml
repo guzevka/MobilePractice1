@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">practice</string>
+    <string name="please_enter_your_name">Please enter your name</string>
+    <string name="please_enter_your_age" />
+    <string name="enter_your_name" />
+    <string name="enter_age">Введите возраст:</string>
+    <string name="reset">Сбросить</string>
+    <string name="send">Отправить</string>
+    <string name="male">Мужской</string>
+    <string name="female">Женский</string>
+    <string name="enter_gender">Выберите пол:</string>
+    <string name="enter_name">Enter your name</string>
+    <string name="enter_n_name">Введите имя:</string>
+    <string name="your_name">Ваше имя:</string>
+    <string name="your_age">Ваш возраст:</string>
+    <string name="your_gender">Ваш пол:</string>
+    <string name="background">Сменить фон</string>
+    <string name="next">Перейти</string>
+</resources>
