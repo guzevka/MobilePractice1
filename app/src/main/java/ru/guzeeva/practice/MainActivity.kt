@@ -7,6 +7,7 @@ import android.widget.EditText
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
@@ -37,21 +38,39 @@ class MainActivity : ComponentActivity() {
 
         sendButton.setOnClickListener {
             val name = nameValue.text.toString()
+            if (!name.matches(Regex("^[a-zA-Zа-яА-Я]+$"))) {
+                nameValue.error = "Имя должно содержать только буквы"
+            } else {
+                nameValue.error = null
+            }
+
             val age = ageValue.text.toString()
+            if (!age.matches(Regex("^(?:100|\\d{1,2})$"))) {
+                ageValue.error = "Возраст должен быть числом от 0 до 100"
+            } else {
+                ageValue.error = null
+            }
+
             val selectedGender = findViewById<RadioButton>(radioGroupGender.checkedRadioButtonId)
+            if (radioGroupGender.checkedRadioButtonId == -1) {
+                Toast.makeText(this, "Выберите пол", Toast.LENGTH_SHORT).show()
+            }
 
-            val intent = Intent(this, MainActivity2::class.java)
-            intent.putExtra("name", name)
-            intent.putExtra("age", age)
-            intent.putExtra("gender", selectedGender.text)
-
-            startActivity(intent)
+            if (name.matches(Regex("^[a-zA-Zа-яА-Я]+$")) && age.matches(Regex("^(?:100|\\d{1,2})$")) && radioGroupGender.checkedRadioButtonId != -1) {
+                val intent = Intent(this, MainActivity2::class.java)
+                intent.putExtra("name", name)
+                intent.putExtra("age", age)
+                intent.putExtra("gender", selectedGender.text)
+                startActivity(intent)
+            }
         }
 
         resetButton.setOnClickListener {
             nameValue.text.clear()
             ageValue.text.clear()
             radioGroupGender.clearCheck()
+            nameValue.error = null
+            ageValue.error = null
         }
     }
 }
