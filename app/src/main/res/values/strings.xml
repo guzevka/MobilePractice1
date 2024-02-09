@@ -16,4 +16,20 @@
     <string name="your_gender">Ваш пол:</string>
     <string name="background">Сменить фон</string>
     <string name="next">Перейти</string>
+    <string name="textview1">TextView</string>
+    <string name="textview2">TextView</string>
+    <string name="textview3">TextView</string>
+    <string name="textview4">TextView</string>
+    <string name="textview5">TextView</string>
+    <string name="textview6">TextView</string>
+    <string name="textview7">TextView</string>
+    <string name="one">TODO</string>
+    <string name="two">TODO</string>
+    <string name="three">TODO</string>
+    <string name="four">TODO</string>
+    <string name="seven">TODO</string>
+    <string name="six">TODO</string>
+    <string name="five">TODO</string>
+    <string name="dog">dog</string>
+    <string name="dog1">dog</string>
 </resources>

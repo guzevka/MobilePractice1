@@ -31,10 +31,16 @@ class MainActivity2 : AppCompatActivity() {
         gender.text = receivedGender
 
         val backgroundButton = findViewById<Button>(R.id.background)
+        val nextButton: Button = findViewById(R.id.next)
 
         backgroundButton.setOnClickListener {
             val randomColor = Color.argb(255, Random.nextInt(256), Random.nextInt(256), Random.nextInt(256))
             findViewById<View>(android.R.id.content).setBackgroundColor(randomColor)
+        }
+
+        nextButton.setOnClickListener {
+            val intent = Intent(this, MainActivity3::class.java)
+            startActivity(intent)
         }
     }
 }
