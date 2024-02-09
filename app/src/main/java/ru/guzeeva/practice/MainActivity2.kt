@@ -20,6 +20,7 @@ class MainActivity2 : AppCompatActivity() {
 
         nameResult = findViewById(R.id.name_result)
         ageResult = findViewById(R.id.age_result)
+        val gender = findViewById<TextView>(R.id.gender_result)
 
         val name = intent.getStringExtra("name")
         val age = intent.getStringExtra("age")
@@ -27,8 +28,6 @@ class MainActivity2 : AppCompatActivity() {
 
         nameResult.text = name
         ageResult.text = age
-
-        val gender = findViewById<TextView>(R.id.gender_result)
         gender.text = receivedGender
 
         val backgroundButton = findViewById<Button>(R.id.background)
